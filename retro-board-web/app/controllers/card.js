@@ -1,31 +1,66 @@
-module.exports = function() {
-
+module.exports = function(app) {
+	
+	var Card = app.models.card;
+	
 	var controller = {};
-	var cards      = [ { _id: 1, type: "Negative", message: "João não está colocando mensagens no commit"}, 
-					   { _id: 2, type: "Positive", message: "Pedro esta usando coisas novas"},
-					   { _id: 3, type: "Positive", message: "Mais uma positva do Pedro, o rapaz é fera"} ];
 
 	controller.getAllCards = function(req, res) {
-		res.json(cards);
+		Card.find().exec().then(
+
+			function(cards){
+				cards.length != 0 ? res.json(cards) : res.status(404).json('nunhum card cadastrado');
+			}, 
+
+			function(erro){
+				console.log(erro);
+				res.status(500).json(erro);
+			});
+
 	};
 
-	controller.newCard = function(req, res) {
+	controller.newCard = function(req, res) { 
 
-		var card = { _id: req.body._id, type: req.body.type, message: req.body.message };
-		cards.push(card);
+		var _id = req.body._id;
 
-		res.status(201).send("Card criado com sucesso");
+		if(_id) {
+
+			Card.findByIdAndUpdate(_id, req.body).exec().then(
+				function(card) {
+					res.json(card);
+				},
+
+				function(error) {
+					res.status(500).json(error);
+				}
+			);
+
+		} else {
+
+			Card.create(req.body).then(
+				function(card) {
+					res.status(201).json(card);
+
+				}, function(error) {
+					res.status(500).json(error);
+				}
+			);
+
+		}
+
 	};
 
-	controller.getByType = function(req, res) {
+	controller.getByType = function(req, res) { 
+
 		var type = req.params.type;
+		Card.find({type: type}).exec().then(
 
-		var card = cards.filter(function(card){
-			return card.type.toUpperCase() == type.toUpperCase();
-		});
+			function(cards){
+				cards.length != 0 ? res.json(cards) : res.status(404).json('nunhum card cadastrado');
+			}, 
 
-		card.length != 0 ? res.json(card) : res.status(404).send("Nenhum card encontrado");
-
+			function(erro){
+				res.status(500).json(erro);
+			});
 	};
 
 	return controller;
