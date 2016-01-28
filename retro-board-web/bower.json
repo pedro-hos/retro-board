@@ -1,0 +1,21 @@
+{
+  "name": "retro-board",
+  "description": "um board para retrospectivas Scrum",
+  "main": "index.js",
+  "authors": [
+    "Pedro Silva <pedro.silva@gauge.com.br>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/pedro-hos/retro-board",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
