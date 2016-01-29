@@ -6,3 +6,15 @@ body {
 .navbar {
     margin-bottom: 20px;
 }
+
+.padding-30 {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.card {
+  width: 150px;
+  height: 100px;
+  margin: 16px;
+  padding: 16px;
+}

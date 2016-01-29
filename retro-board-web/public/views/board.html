@@ -4,12 +4,21 @@
   	<div class="panel panel-default">
   		<div class="panel-heading"><b>Positives</b></div>
   		<div class="panel-body">
-    	
-    		<form class="form-horizontal" role="form" name="mainForm" ng-submit="salvar()">
-    			 <div class="form-group">
-    				<textarea class="form-control" rows="3"></textarea>
-    			</div>
+    		
+    		<form class="form-horizontal padding-30" role="form" name="mainForm" ng-submit="newCard('Postive')">
+    			 <div class="input-group">
+    				<input type="text" class="form-control">
+    				<span class="input-group-btn">
+       					<button class="btn btn-default" type="submit">Send!</button>
+     				</span>
+    			 </div>
     		</form>
+
+    		<hr>
+
+			<div class="w3-card-24 w3-blue card" ng-repeat="card in positiveCards">
+    			<p>{{card.comments}}</p>
+    		</div>
 
   		</div>
 	</div>
@@ -19,7 +28,22 @@
   	<div class="panel panel-default">
   		<div class="panel-heading"><b>Negatives</b></div>
   		<div class="panel-body">
-    		Panel content
+    		
+    		<form class="form-horizontal padding-30" role="form" name="mainForm" ng-submit="newCard('Negative')">
+    			 <div class="input-group">
+    				<input type="text" class="form-control">
+    				<span class="input-group-btn">
+       					<button class="btn btn-default" type="submit">Send!</button>
+     				</span>
+    			 </div>
+    		</form>
+
+    		<hr>
+
+    		<div class="w3-card-24 w3-red card" ng-repeat="card in negativeCards">
+    			<p>{{card.comments}}</p>
+    		</div>
+
   		</div>
 	</div>
   </div>
