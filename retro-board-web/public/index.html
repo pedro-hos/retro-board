@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Retro-Board</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="styles/style.css"/>
+</head>
+<body ng-app="retro-board">
+<div class="container">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Retro-Board</a>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+
+    <div ng-view="">
+
+        <!-- Aqui vai o código das views-->
+
+    </div>
+
+</div>
+
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/angular/angular.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="vendor/angular-resource/angular-resource.js"></script>
+<script src="vendor/angular-route/angular-route.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/controllers/board.js"></script>
+<script src="js/services/cardService.js"></script>
+
+</body>
+
+<html>
