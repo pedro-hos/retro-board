@@ -17,5 +17,14 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular-i18n": "~1.4.9",
+    "angular": "~1.4.9",
+    "angular-mocks": "~1.4.9",
+    "angular-resource": "~1.4.9",
+    "angular-route": "~1.4.9",
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.2.0"
+  }
 }
