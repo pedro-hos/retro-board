@@ -1,6 +1,6 @@
 module.exports = function(app) {
 	
-	var Card = app.models.card;
+	var Card = app.models.Card;
 	
 	var controller = {};
 
