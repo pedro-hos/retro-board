@@ -19,7 +19,7 @@ angular.module('retro-board')
         		}
 
         	);
-        }
+        };
 
          function negativeCards() {
         	cardService.query({params: "Negative"}, 
@@ -32,10 +32,21 @@ angular.module('retro-board')
         		}
 
         	);
-        }
+        };
 
-        $scope.newCard = function(type) {
-        	console.log(type);
-        }
+        $scope.newCard = function() {
+            $scope.card.$save().then(
+
+                function() {
+                    $scope.card = new cardService();
+                    positiveCards();
+                    negativeCards();
+                },
+
+                function(error) {
+                    console.log(error);
+                }
+            );
+        };
 
     });
