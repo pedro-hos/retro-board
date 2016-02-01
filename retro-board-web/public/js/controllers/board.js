@@ -4,6 +4,7 @@ angular.module('retro-board')
     	$scope.card  		 = new cardService();
     	$scope.negativeCards = [];
 		$scope.positiveCards = [];
+        $scope.card.type = "Positive";
     	
     	positiveCards();
 		negativeCards();
@@ -35,18 +36,36 @@ angular.module('retro-board')
         };
 
         $scope.newCard = function() {
-            $scope.card.$save().then(
+            var cardsList = $scope.card.comment.split("|"),
+                type = $scope.card.type;
 
-                function() {
+            try{
+                cardsList.map(function(_comment){
+                    $scope.card.comment = _comment;
+                    $scope.card.$save();
                     $scope.card = new cardService();
-                    positiveCards();
-                    negativeCards();
-                },
-
-                function(error) {
-                    console.log(error);
-                }
-            );
+                    $scope.card.type = type;
+                });
+                positiveCards();
+                negativeCards();  
+            }catch(error){
+                console.log(error);
+            }
         };
 
+        $scope.deleteCard = function(card){
+            var continuar = confirm("Tem certeza que deseja deltar o card?");
+            if(continuar){
+                card.$remove().then(
+                    function() {
+                        positiveCards();
+                        negativeCards();
+                    },
+                        function(error){
+                        console.log(error)
+                    }
+                )  
+            }
+            
+        }
     });

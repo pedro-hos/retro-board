@@ -13,8 +13,28 @@ body {
 }
 
 .card {
-  width: 150px;
-  height: 100px;
-  margin: 16px;
-  padding: 16px;
+	min-height: 100px;
+	min-width:40%; 
+	margin: 1em;
+	padding: 1em;
+	display: inline-block;
+	background:#fefabc;
+	font-family: 'Gloria Hallelujah', cursive; 
+	font-size:1em; 
+	color: #000; 
+
+	box-shadow: 0px 4px 6px #333;
+	-moz-box-shadow: 0px 4px 6px #333;
+	-webkit-box-shadow: 0px 4px 6px #333;
+
+}
+
+.card { transform: rotate(2.75deg); }
+.card:nth-child(2n) { transform: none; }
+.card:nth-child(3n) { transform: rotate(-2.5deg); }
+.card:nth-child(5n) { transform: scale(1.1); }
+
+.card .close{
+	font-size: 2em;
+	margin-top: -15px;
 }
