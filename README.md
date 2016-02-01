@@ -10,6 +10,20 @@ O que será necessário?
 Como Rodar?
 ===
 
-* Baixa a parada (Clona aí Zé);
-* Vai na pastinha que clonou e roda `npm install` para baixar as dependências;
+* Baixa a parada (Clona aí Zé):
+
+	git clone https://github.com/pedro-hos/retro-board.git
+
+* Vai na pastinha que clonou:
+
+	cd retro-board-web
+
+* baixe as dependências do Node
+
+	npm install
+
+* baixe as dependências do bower:
+
+	bower install
+
 * agora só rodar `node server` e tarammmmm, vai rodar, se nada der errado \o
