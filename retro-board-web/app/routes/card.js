@@ -6,5 +6,8 @@ module.exports = function(app) {
 		.get(controller.getAllCards)
 		.post(controller.newCard);
 
+	app.route('/cards/:id')
+		.delete(controller.removerCard);
+
 	app.get('/cards/:type', controller.getByType);
 }

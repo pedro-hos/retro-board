@@ -56,7 +56,7 @@ angular.module('retro-board')
         $scope.deleteCard = function(card){
             var continuar = confirm("Tem certeza que deseja deltar o card?");
             if(continuar){
-                card.$remove().then(
+                card.$remove({params : card._id}).then(
                     function() {
                         positiveCards();
                         negativeCards();

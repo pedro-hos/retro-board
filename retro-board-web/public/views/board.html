@@ -40,6 +40,7 @@
   		<div class="panel-body">
 
     		<div class="w3-red card" ng-repeat="card in negativeCards">
+          <span class="close" ng-click="deleteCard(card)">&times;</span>
     			<p>{{card.comment}}</p>
     		</div>
 
