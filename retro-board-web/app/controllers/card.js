@@ -55,7 +55,7 @@ module.exports = function(app) {
 		Card.find({type: type}).exec().then(
 
 			function(cards){
-				cards.length != 0 ? res.json(cards) : res.status(404).json('nunhum card cadastrado');
+				cards.length != 0 ? res.json(cards) : res.status(404).json('nenhum card cadastrado');
 			}, 
 
 			function(erro){

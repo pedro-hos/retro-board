@@ -4,7 +4,7 @@
     <div class="input-group">
       <div class="input-group-btn">
            <label class="btn btn-default">
-            <input type="radio" name="options" id="_positive" value="Positive" ng-model="card.type"> Positive
+            <input type="radio" checked name="options" id="_positive" value="Positive" ng-model="card.type"> Positive
           </label>
           <label class="btn btn-default">
               <input type="radio" name="options" id="_negative" value="Negative" ng-model="card.type"> Negative
@@ -24,8 +24,10 @@
   		<div class="panel-heading"><b>Positives</b></div>
   		<div class="panel-body">
 
-			<div class="w3-card-24 w3-blue card" ng-repeat="card in positiveCards">
+			<div class="card" ng-repeat="card in positiveCards">
+          <span class="close" ng-click="deleteCard(card)">&times;</span>
     			<p>{{card.comment}}</p>
+
     		</div>
 
   		</div>
@@ -37,7 +39,7 @@
   		<div class="panel-heading"><b>Negatives</b></div>
   		<div class="panel-body">
 
-    		<div class="w3-card-24 w3-red card" ng-repeat="card in negativeCards">
+    		<div class="w3-red card" ng-repeat="card in negativeCards">
     			<p>{{card.comment}}</p>
     		</div>
 
