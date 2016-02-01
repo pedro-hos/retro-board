@@ -19,7 +19,7 @@ angular.module('retro-board')
         			console.log(error);
         		}
 
-        	);
+        	); 
         };
 
          function negativeCards() {
