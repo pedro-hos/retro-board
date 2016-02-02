@@ -18,6 +18,21 @@ module.exports = function(app) {
 
 	};
 
+	controller.removerCard = function(req, res) {
+
+		Card.remove({"_id": req.params.id}).exec().then(
+
+			function(){
+				res.status(204).end();
+			}, 
+
+			function(error){
+				console.log(error);
+				res.status(500).json(error);
+			});
+
+	};
+
 	controller.newCard = function(req, res) { 
 
 		var _id = req.body._id;
