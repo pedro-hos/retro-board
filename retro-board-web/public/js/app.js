@@ -8,10 +8,6 @@ angular
                 controller: 'BoardController'
             })
 
-            .when('/teste', {
-                templateUrl: 'views/teste.html'
-            })
-
             .otherwise({
                 redirectTo: '/'
             });
