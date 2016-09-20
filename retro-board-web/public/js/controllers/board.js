@@ -10,26 +10,25 @@ angular.module('retro-board')
 		negativeCards();
         
         function positiveCards() {
-        	cardService.query({params: "Positive"}, 
-
-        		function(cards) {
-        			$scope.positiveCards = cards;
-
-        		}, function(error) {
+            cardService.query({params: "Positive"}, 
+                function(cards) {
+                    $scope.positiveCards = cards;
+                }, function(error) {
+                    if(error.status == 404)
+                        $scope.positiveCards = [];
         			console.log(error);
         		}
 
         	); 
         };
 
-         function negativeCards() {
-        	cardService.query({params: "Negative"}, 
-
-        		function(cards) {
-        			$scope.negativeCards = cards;
-                    console.log(cards);
-
-        		}, function(error) {
+        function negativeCards() {
+            cardService.query({params: "Negative"},
+                function(cards) {
+                    $scope.negativeCards = cards;
+                }, function(error) {
+                    if(error.status == 404)
+                        $scope.negativeCards = [];
         			console.log(error);
         		}
 
