@@ -23,13 +23,11 @@
   	<div class="panel panel-default">
   		<div class="panel-heading"><b>Positives</b></div>
   		<div class="panel-body">
-
-			<div class="card" ng-repeat="card in positiveCards">
+        <div class="no-cards" ng-show="!positiveCards.length">No post-it</div>
+  			<div class="card" ng-repeat="card in positiveCards">
           <span class="close" ng-click="deleteCard(card)">&times;</span>
     			<p>{{card.comment}}</p>
-
     		</div>
-
   		</div>
 	</div>
   </div>
@@ -38,12 +36,11 @@
   	<div class="panel panel-default">
   		<div class="panel-heading"><b>Negatives</b></div>
   		<div class="panel-body">
-
+        <div class="no-cards" ng-show="!negativeCards.length">No post-it</div>
     		<div class="w3-red card" ng-repeat="card in negativeCards">
           <span class="close" ng-click="deleteCard(card)">&times;</span>
     			<p>{{card.comment}}</p>
     		</div>
-
   		</div>
 	</div>
   </div>

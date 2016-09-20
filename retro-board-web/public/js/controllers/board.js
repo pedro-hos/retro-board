@@ -27,6 +27,7 @@ angular.module('retro-board')
 
         		function(cards) {
         			$scope.negativeCards = cards;
+                    console.log(cards);
 
         		}, function(error) {
         			console.log(error);
