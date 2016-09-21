@@ -1,6 +1,6 @@
 var http = require('http');
 var app  = require('./config/express')();
-require('./config/database.js')('mongodb://localhost/retroboardDB');
+require('./config/database.js')('mongodb://127.0.0.1/retroboardDB');
 
 
 http.createServer(app).listen(app.get('port'), function(){
